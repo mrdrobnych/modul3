@@ -1,0 +1,21 @@
+<% if !@room.nil? %>
+	<div class="col-xl-1" >
+	</div>
+
+	<div class="col-xl-8" >	
+		<br></br>
+		<h2>Про Кімнату <i class="fas fa-info"></i></h2>
+		<br></br>
+		<h3>Номер Кімнати <i class="fas fa-chevron-right"></i> <%= @room.number %> </h3><br />
+		<h3>Кількість Ліжок <i class="fas fa-chevron-right"></i> <%= @room.bed %> </h3><br/> 
+		<h3>Фото Кімнати <i class="far fa-images"></i></h3>
+		<br></br>
+		<div class="col-xl-12 text-center" >	
+			<% @room.photos.each do |photo| %>
+				<%= image_tag(photo.url, class: "img-thumbnail", alt: "Cinque Terre", size: "300x500") %>  <i class="fas fa-chevron-right"></i>
+			<% end %>
+		</div>
+	</div>
+<% else %>
+  Room empty
+<% end %>

@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-xl bg-dark navbar-dark">
+
+    <%= link_to "УЖГОРОД", root_path, class: "navbar-brand" %>
+   
+    <ul class="navbar-nav ml-auto">
+      <%= link_to pages_gallery_path, class: "nav-link" do %>
+        <i class="far fa-images"></i> Галерея
+      <% end %>
+
+      <li class="nav-item">
+        <%= link_to "Контакти", pages_contact_path, class: "nav-link"%> 
+      </li>
+    </ul>
+</nav>

@@ -1,0 +1,79 @@
+<br></br>
+
+<div class="col-sm-12 font-italic text-center" >
+	<h1><%= @hotel.name  %></h1>
+</div> 
+
+<div class="col-sm-12 font-italic text-center" >
+	<h1>		
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+		<i class="fas fa-star"></i>
+	</h1>
+</div> 
+
+<br></br>
+
+<div class="row">
+	<div class="col-sm-1" >
+	</div>
+	<div class="col-sm-5" >
+		<p>
+			<%= link_to image_tag(@hotel.photo.url, class: "img-thumbnail", alt: "Cinque Terre", size: "800x500") %> 
+		</p>
+	</div>
+	<div class="col-sm-1" >
+	</div>
+	<div class="col-sm-4 text-center">
+		<br></br>
+		<h1>Про Наш Готель:</h1>
+		<br></br>
+		<h2><%= @hotel.desk %></h2>
+	</div>
+	<div class="col-sm-1" >
+	</div>
+</div> 
+
+<br></br>
+
+<div class="col-sm-12 text-center" >
+	<div class="btn-group btn-group-lg">
+		<% @rooms.each do |room| %>
+  			<%= link_to "Одномістні Номери", room_path(room.bed = 1), class: "btn btn-light", type: "button" %>  		
+  			<%= link_to "Двомістні Номери", room_path(room.bed = 2), class: "btn btn-light", type: "button" %>
+  			<%= link_to "Тримістні Номери", room_path(room.bed = 3), class: "btn btn-light", type: "button" %>
+  		<% end %>
+	</div> 
+</div> 
+
+<br></br>
+<br></br>
+
+<div class="row">
+	<div class="col-xl-1" >
+	</div>
+	<div class="col-xl-2" >
+		<h2>
+			<i class="fas fa-wifi"></i>   
+			<i class="fas fa-utensils"></i>
+			<i class="fas fa-money-check-alt"></i>    
+		</h2>
+	</div>
+	<div class="col-xl-6 text-center" >
+		<h2>
+			Рейтинг Готелю <i class="fas fa-chevron-right"></i> <%= @hotel.rate %> 
+		</h2>
+	</div>
+	<div class="col-xl-1" >
+	</div>
+	<div class="col-xl-2 ml-auto" >
+		<h2>
+			<i class="fas fa-shower"></i>   
+			<i class="fas fa-car"></i>  
+			<i class="fas fa-luggage-cart"></i> 
+		</h2>
+	</div>
+</div>
+<br></br>
+
